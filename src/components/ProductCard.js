@@ -1,40 +1,25 @@
-import { Link } from 'react-router-dom'
-import { IconShoppingCartPlus, IconCheck } from '@tabler/icons'
-import {useState, useEffect} from 'react'
+import Product from './Product'
+import { IconShoppingCartPlus } from '@tabler/icons'
 
-const ProductCard = ({ image, name, price, id, appendCartHandler }) => {
-  
-  const [isCartUpdate, setIsCartUpdate] = useState(false)
-  const [cardTimeout, setCardTimeout] = useState(0)
+const ProductCard = ({ image, name, price, id, appendCartHandler, productAddedNotifier }) => {
 
-  const handleCartClick = event => {
-    event.stopPropagation()
-    if(isCartUpdate) return
-      
-    setIsCartUpdate(true)
-    const timeout = setTimeout(() => setIsCartUpdate(false), 1000)
-    setCardTimeout(timeout)
-
-    if (appendCartHandler) appendCartHandler(id, 1)
+  const handleCartClick = () => {
+    alert('product added')
+    // call to top level append cart handler to add a product
+    if(appendCartHandler) appendCartHandler(id, 1)
+    //call to top level notify user that product is added
+    if(productAddedNotifier) productAddedNotifier(id, 1)
   }
-
-  useEffect(() => {
-    return () => clearTimeout(cardTimeout)
-  })
 
   return (
     <div className='product-card'>
-      <Link to={`/shop/product/${id}`}>
-        <img src={image} alt={name} />
-      </Link>
-      <div>
-        <div>
-          <h4>{name}</h4>
-          <p>{price}</p>
-        </div>
-        {!isCartUpdate && <IconShoppingCartPlus onClick={handleCartClick} />}
-        {isCartUpdate && <IconCheck onClick={handleCartClick} />}
-      </div>
+      <Product
+        image={image}
+        name={name}
+        price={price}
+        id={id}
+      />
+      <IconShoppingCartPlus onClick={handleCartClick}/>
     </div>
   )
 }
