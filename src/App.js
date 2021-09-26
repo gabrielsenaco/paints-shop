@@ -1,5 +1,19 @@
+import Header from './components/Header'
+import Footer from './components/Footer'
+import ProductCard from './components/ProductCard'
+
+import {
+  BrowserRouter as Router
+} from 'react-router-dom'
+
 const App = () => {
-  return <h1>Hello world</h1>
+  return (
+      <Router>
+         <Header />
+         <Footer />
+         <ProductCard image="e" name="Prod1" price="500" id="prod1" />
+      </Router>
+    )
 }
 
 export default App;
