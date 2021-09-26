@@ -1,49 +1,66 @@
-[{
-  "name": "Alice Blue",
-  "image": "AliceBlue.png"
-}, {
-  "name": "Antique White 1",
-  "image": "AntiqueWhite1.png"
-}, {
-  "name": "Aqua Marine 2",
-  "image": "aquamarine2.png"
-}, {
-  "name": "Brown 3",
-  "image": "brown3.png"
-}, {
-  "name": "Burly Wood 1",
-  "image": "burlywood1.png"
-}, {
-  "name": "Coral 1",
-  "image": "coral1.png"
-}, {
-  "name": "Cornflower Blue",
-  "image": "CornflowerBlue.png"
-}, {
-  "name": "Dark Orchid",
-  "image": "DarkOrchid.png"
-}, {
-  "name": "Deep Sky Blue 1",
-  "image": "DeepSkyBlue1.png"
-}, {
-  "name": "Hot Pink 1",
-  "image": "HotPink1.png"
-}, {
-  "name": "Indian Red 1",
-  "image": "IndianRed1.png"
-}, {
-  "name": "Pale Green 2",
-  "image": "PaleGreen2.png"
-}, {
-  "name": "Royal Blue 3",
-  "image": "RoyalBlue3.png"
-}, {
-  "name": "Spring Green 2",
-  "image": "SpringGreen2.png"
-}, {
-  "name": "Turquoise 3",
-  "image": "turquoise3.png"
-}, {
-  "name": "Wheat 2",
-  "image": "wheat2.png"
-}]
+[
+  {
+    "name": "Alice Blue",
+    "image": "AliceBlue.png"
+  },
+  {
+    "name": "Antique White 1",
+    "image": "AntiqueWhite1.png"
+  },
+  {
+    "name": "Aqua Marine 2",
+    "image": "aquamarine2.png"
+  },
+  {
+    "name": "Brown 3",
+    "image": "brown3.png"
+  },
+  {
+    "name": "Burly Wood 1",
+    "image": "burlywood1.png"
+  },
+  {
+    "name": "Coral 1",
+    "image": "coral1.png"
+  },
+  {
+    "name": "Cornflower Blue",
+    "image": "CornflowerBlue.png"
+  },
+  {
+    "name": "Dark Orchid",
+    "image": "DarkOrchid.png"
+  },
+  {
+    "name": "Deep Sky Blue 1",
+    "image": "DeepSkyBlue1.png"
+  },
+  {
+    "name": "Hot Pink 1",
+    "image": "HotPink1.png"
+  },
+  {
+    "name": "Indian Red 1",
+    "image": "IndianRed1.png"
+  },
+  {
+    "name": "Pale Green 2",
+    "image": "PaleGreen2.png"
+  },
+  {
+    "name": "Royal Blue 3",
+    "image": "RoyalBlue3.png"
+  },
+  {
+    "name": "Spring Green 2",
+    "image": "SpringGreen2.png"
+  },
+  {
+    "name": "Turquoise 3",
+    "image": "turquoise3.png"
+  },
+  {
+    "name": "Wheat 2",
+    "image": "wheat2.png"
+  }
+]

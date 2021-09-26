@@ -64,7 +64,7 @@ const Footer = () => {
 
   return (
     <footer>
-      <Link to='/' className="logo">
+      <Link to='/' className='logo'>
         <Logo />
       </Link>
       <FooterSection title='Content' items={contentItems} />
@@ -73,11 +73,7 @@ const Footer = () => {
         items={socialMediaItems}
         external_items={true}
       />
-      <FooterSection
-        title='Source'
-        items={sourceItems}
-        external_items={true}
-      />
+      <FooterSection title='Source' items={sourceItems} external_items={true} />
     </footer>
   )
 }
