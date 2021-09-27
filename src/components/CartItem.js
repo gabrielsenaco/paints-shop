@@ -11,25 +11,22 @@ const CartItem = ({
   removeProduct
 }) => {
   const appendProductHandler = () => {
-    // appendProductQuantity(id, 1)
-    console.log('append product')
+    appendProductQuantity(id, 1)
   }
 
   const reduceProductHandler = () => {
-    // reduceProductQuantity(id, 1)
-    console.log('reduce product')
+    reduceProductQuantity(id, 1)
   }
 
   const removeProductHandler = () => {
-    // removeProduct(id)
-    console.log('remove product')
+    removeProduct(id)
   }
 
   return (
     <div>
       <img className='cart-product-image' src={image} alt={name} />
       <p className='cart-product-name'>{name}</p>
-      <p className='cart-product-price'>{price}</p>
+      <p className='cart-product-price'>{price * quantity}</p>
       <p className='cart-product-quantity'>{quantity}</p>
       <div className='cart-item-actions'>
         <small onClick={appendProductHandler} className='cart-item-action'>
