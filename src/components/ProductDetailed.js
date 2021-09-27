@@ -17,11 +17,8 @@ const ProductDetailed = ({
 
   const handleCartSubmit = event => {
     event.preventDefault()
-    alert('product added 2' + quantity)
-    // call to top level append cart handler to add a product
     if (appendProductQuantity) appendProductQuantity(id, quantity)
-    //call to top level notify user that product is added
-    if (productAddedNotifier) productAddedNotifier(id, quantity)
+    if (productAddedNotifier) productAddedNotifier(id)
     history.push('/shop')
   }
 

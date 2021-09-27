@@ -11,7 +11,7 @@ const ProductCard = ({
 }) => {
   const handleCartClick = () => {
     if (appendProductQuantity) appendProductQuantity(id, 1)
-    if (productAddedNotifier) productAddedNotifier(id, 1)
+    if (productAddedNotifier) productAddedNotifier(id)
   }
 
   return (
