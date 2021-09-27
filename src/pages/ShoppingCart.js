@@ -22,15 +22,15 @@ const ShoppingCart = ({
     history.push('/')
   }
 
-  const appendReducer = appendKey => {
-    return cartItems.reduce((total, now) => {
-      total += now[appendKey]
-      return total
-    }, 0)
-  }
+  const productsTotalQuantity = cartItems.reduce((total, product) => {
+    total += product.quantity
+    return total
+  }, 0)
 
-  const productsTotalQuantity = appendReducer('quantity')
-  const productsTotalPrice = appendReducer('price')
+  const productsTotalPrice = cartItems.reduce((total, product) => {
+    total += product.price * product.quantity
+    return total
+  }, 0)
 
   cartItems = cartItems.map(item => {
     return (
@@ -39,6 +39,7 @@ const ShoppingCart = ({
         name={item.name}
         price={item.price}
         id={item.id}
+        key={item.id}
         quantity={item.quantity}
         appendProductQuantity={appendProductQuantity}
         reduceProductQuantity={reduceProductQuantity}
@@ -57,6 +58,8 @@ const ShoppingCart = ({
             <IconTrash /> Clear Cart
           </Button>
         </div>
+        <ul className='shipping-cart-items'>{cartItems}</ul>
+
         <Button type='submit'>
           <IconCheck /> Confirm Payment
         </Button>
