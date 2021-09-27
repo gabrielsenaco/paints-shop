@@ -6,7 +6,7 @@ import ProductList from './../components/ProductList'
 const Home = ({ products }) => {
   products = getRandomArray(products).slice(0, 4)
   return (
-    <section>
+    <section className='home-section'>
       <Link to='/shop'>
         <img src={Banner} alt='Banner' />
       </Link>
