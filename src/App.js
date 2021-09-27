@@ -1,6 +1,8 @@
 import { useParams } from 'react-router-dom'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { useState } from 'react'
+import Paints from './paints/paints.json'
+import { getRandomArray } from './utils.js'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import CartNotifier from './components/CartNotifier'
@@ -9,8 +11,6 @@ import Shop from './pages/Shop'
 import ProductDetails from './pages/ProductDetails'
 import Support from './pages/Support'
 import ShoppingCart from './pages/ShoppingCart'
-import Paints from './paints/paints.json'
-import { getRandomArray } from './utils.js'
 
 function generateProducts () {
   return Paints.map(paint => {
@@ -25,10 +25,6 @@ const App = () => {
   const [products] = useState(getRandomArray(generateProducts()))
   const [cart, setCart] = useState([])
   const [lastProduct, setLastProduct] = useState(null)
-
-  const clearCart = () => {
-    setCart([])
-  }
 
   const isSameProduct = (id1, id2) => {
     return id1.toLowerCase() === id2.toLowerCase()
@@ -45,6 +41,10 @@ const App = () => {
         }
       })
     })
+  }
+
+  const clearCart = () => {
+    setCart([])
   }
 
   const removeProduct = id => {
