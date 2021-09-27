@@ -82,18 +82,25 @@ const App = () => {
   }
 
   const productAddedNotifier = id => {
-    setLastProduct(products.filter(product => isSameProduct(product.id, id))[0])
+    const product = products.filter(product => isSameProduct(product.id, id))[0]
+    setLastProduct(product)
   }
 
   const clearLastProduct = () => {
     setLastProduct(null)
   }
 
+  const getCartLength = () => {
+    return cart.reduce((total, now) => {
+      return (total += now.quantity)
+    }, 0)
+  }
+
   return (
     <Router>
-      <Header cartLength={cart.length} />
+      <Header cartLength={getCartLength()} />
       <CartNotifier
-        productName={lastProduct ? lastProduct.name : null}
+        lastProduct={lastProduct}
         clearLastProduct={clearLastProduct}
       />
       <Switch>
