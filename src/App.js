@@ -1,31 +1,132 @@
 import { useParams } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { useState } from 'react'
 import Header from './components/Header'
 import Footer from './components/Footer'
+import CartNotifier from './components/CartNotifier'
 import Home from './pages/Home'
 import Shop from './pages/Shop'
 import ProductDetails from './pages/ProductDetails'
 import Support from './pages/Support'
 import ShoppingCart from './pages/ShoppingCart'
+import Paints from './paints/paints.json'
+import { getRandomArray } from './utils.js'
 
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+function generateProducts () {
+  return Paints.map(paint => {
+    return {
+      ...paint,
+      id: paint.name.replaceAll(' ', '-')
+    }
+  })
+}
 
 const App = () => {
+  const [products] = useState(getRandomArray(generateProducts()))
+  const [cart, setCart] = useState([])
+  const [lastProduct, setLastProduct] = useState(null)
+
+  const clearCart = () => {
+    setCart([])
+  }
+
+  const isSameProduct = (id1, id2) => {
+    return id1.toLowerCase() === id2.toLowerCase()
+  }
+
+  const updateItemQuantity = (id, quantity) => {
+    setCart(cart => {
+      return cart.map(prod => {
+        if (!isSameProduct(prod.id, id)) return prod
+        const newQuantity = prod.quantity + quantity
+        return {
+          ...prod,
+          quantity: newQuantity
+        }
+      })
+    })
+  }
+
+  const removeProduct = id => {
+    setCart(prevCart => prevCart.filter(prod => !isSameProduct(prod.id, id)))
+  }
+
+  const addProduct = (id, quantity = 1) => {
+    let product = products.filter(prod => isSameProduct(prod.id, id))[0]
+    if (!product) return
+
+    setCart(prevCart => {
+      return prevCart.concat({
+        ...product,
+        quantity
+      })
+    })
+  }
+
+  const reduceProductQuantity = (id, quantity) => {
+    let product = cart.filter(prod => isSameProduct(prod.id, id))[0]
+    if (!product) return
+    if (product.quantity <= quantity) {
+      removeProduct(id)
+    } else {
+      updateItemQuantity(id, -Math.abs(quantity))
+    }
+  }
+
+  const appendProductQuantity = (id, quantity) => {
+    let product = cart.filter(prod => isSameProduct(prod.id, id))[0]
+    if (!product) {
+      return addProduct(id, quantity)
+    }
+    updateItemQuantity(id, Math.abs(quantity))
+  }
+
+  const productAddedNotifier = id => {
+    setLastProduct(products.filter(product => isSameProduct(product.id, id))[0])
+  }
+
+  const clearLastProduct = () => {
+    setLastProduct(null)
+  }
+
   return (
     <Router>
-      <Header />
+      <Header cartLength={cart.length} />
+      <CartNotifier
+        productName={lastProduct ? lastProduct.name : null}
+        clearLastProduct={clearLastProduct}
+      />
       <Switch>
         <Route exact path='/'>
-          <Home products={[{ image: '3', name: '4', price: 3, id: 'f' }]} />
+          <Home
+            products={products}
+            appendProductQuantity={appendProductQuantity}
+            productAddedNotifier={productAddedNotifier}
+          />
         </Route>
         <Route exact path='/support' component={Support} />
         <Route exact path='/shop'>
-          <Shop products={[{ image: '3', name: '4', price: 3, id: 'f' }]} />
+          <Shop
+            products={products}
+            appendProductQuantity={appendProductQuantity}
+            productAddedNotifier={productAddedNotifier}
+          />
         </Route>
         <Route path='/shop/product/:productId'>
-          <ProductWrapper products={[]} />
+          <ProductWrapper
+            products={products}
+            appendProductQuantity={appendProductQuantity}
+            productAddedNotifier={productAddedNotifier}
+          />
         </Route>
         <Route exact path='/shopping-cart'>
-          <ShoppingCart cartItems={[]} />
+          <ShoppingCart
+            cartItems={cart}
+            appendProductQuantity={appendProductQuantity}
+            removeProduct={removeProduct}
+            reduceProductQuantity={reduceProductQuantity}
+            clearCart={clearCart}
+          />
         </Route>
       </Switch>
       <Footer />
@@ -35,7 +136,7 @@ const App = () => {
 
 const ProductWrapper = ({
   products,
-  appendCartHandler,
+  appendProductQuantity,
   productAddedNotifier
 }) => {
   const { productId } = useParams()
@@ -54,7 +155,7 @@ const ProductWrapper = ({
       name={product.name}
       price={product.price}
       id={product.id}
-      appendCartHandler={appendCartHandler}
+      appendProductQuantity={appendProductQuantity}
       productAddedNotifier={productAddedNotifier}
     />
   )
