@@ -6,7 +6,7 @@ const ProductDetails = ({
   name,
   price,
   id,
-  appendCartHandler,
+  appendProductQuantity,
   productAddedNotifier
 }) => {
   return (
@@ -18,7 +18,7 @@ const ProductDetails = ({
         image={image}
         price={price}
         id={id}
-        appendCartHandler={appendCartHandler}
+        appendProductQuantity={appendProductQuantity}
         productAddedNotifier={productAddedNotifier}
       />
     </section>

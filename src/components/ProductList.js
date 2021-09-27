@@ -1,6 +1,10 @@
 import ProductCard from './ProductCard'
 
-const ProductList = ({ products, appendCartHandler, productAddedNotifier }) => {
+const ProductList = ({
+  products,
+  appendProductQuantity,
+  productAddedNotifier
+}) => {
   products = products.map(product => {
     return (
       <ProductCard
@@ -8,7 +12,7 @@ const ProductList = ({ products, appendCartHandler, productAddedNotifier }) => {
         name={product.name}
         price={product.price}
         id={product.id}
-        appendCartHandler={appendCartHandler}
+        appendProductQuantity={appendProductQuantity}
         productAddedNotifier={productAddedNotifier}
         key={product.id}
       />

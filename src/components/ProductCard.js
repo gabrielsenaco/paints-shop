@@ -6,14 +6,11 @@ const ProductCard = ({
   name,
   price,
   id,
-  appendCartHandler,
+  appendProductQuantity,
   productAddedNotifier
 }) => {
   const handleCartClick = () => {
-    alert('product added')
-    // call to top level append cart handler to add a product
-    if (appendCartHandler) appendCartHandler(id, 1)
-    //call to top level notify user that product is added
+    if (appendProductQuantity) appendProductQuantity(id, 1)
     if (productAddedNotifier) productAddedNotifier(id, 1)
   }
 
