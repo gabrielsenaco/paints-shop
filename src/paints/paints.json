@@ -1,66 +1,82 @@
 [
   {
     "name": "Alice Blue",
-    "image": "AliceBlue.png"
+    "image": "AliceBlue.png",
+    "price": 67
   },
   {
     "name": "Antique White 1",
-    "image": "AntiqueWhite1.png"
+    "image": "AntiqueWhite1.png",
+    "price": 12
   },
   {
     "name": "Aqua Marine 2",
-    "image": "aquamarine2.png"
+    "image": "aquamarine2.png",
+    "price": 87
   },
   {
     "name": "Brown 3",
-    "image": "brown3.png"
+    "image": "brown3.png",
+    "price": 74
   },
   {
     "name": "Burly Wood 1",
-    "image": "burlywood1.png"
+    "image": "burlywood1.png",
+    "price": 20
   },
   {
     "name": "Coral 1",
-    "image": "coral1.png"
+    "image": "coral1.png",
+    "price": 74
   },
   {
     "name": "Cornflower Blue",
-    "image": "CornflowerBlue.png"
+    "image": "CornflowerBlue.png",
+    "price": 90
   },
   {
     "name": "Dark Orchid",
-    "image": "DarkOrchid.png"
+    "image": "DarkOrchid.png",
+    "price": 283
   },
   {
     "name": "Deep Sky Blue 1",
-    "image": "DeepSkyBlue1.png"
+    "image": "DeepSkyBlue1.png",
+    "price": 200
   },
   {
     "name": "Hot Pink 1",
-    "image": "HotPink1.png"
+    "image": "HotPink1.png",
+    "price": 140
   },
   {
     "name": "Indian Red 1",
-    "image": "IndianRed1.png"
+    "image": "IndianRed1.png",
+    "price": 150
   },
   {
     "name": "Pale Green 2",
-    "image": "PaleGreen2.png"
+    "image": "PaleGreen2.png",
+    "price": 30
   },
   {
     "name": "Royal Blue 3",
-    "image": "RoyalBlue3.png"
+    "image": "RoyalBlue3.png",
+    "price": 60
   },
   {
     "name": "Spring Green 2",
-    "image": "SpringGreen2.png"
+    "image": "SpringGreen2.png",
+    "price": 800
   },
   {
     "name": "Turquoise 3",
-    "image": "turquoise3.png"
+    "image": "turquoise3.png",
+    "price": 120
   },
   {
     "name": "Wheat 2",
-    "image": "wheat2.png"
+    "image": "wheat2.png",
+    "price": 150
   }
 ]
