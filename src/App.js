@@ -1,19 +1,32 @@
 import Header from './components/Header'
 import Footer from './components/Footer'
-import ProductCard from './components/ProductCard'
+import Home from './pages/Home'
+import Shop from './pages/Shop'
+//import ProductDetails from './pages/ProductDetails'
+import Support from './pages/Support'
+import ShoppingCart from './pages/ShoppingCart'
 
-import {
-  BrowserRouter as Router
-} from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 const App = () => {
   return (
-      <Router>
-         <Header />
-         <Footer />
-         <ProductCard image="e" name="Prod1" price="500" id="prod1" />
-      </Router>
-    )
+    <Router>
+      <Header />
+      <Switch>
+        <Route exact path='/'>
+          <Home products={[{ image: '3', name: '4', price: 3, id: 'f' }]} />
+        </Route>
+        <Route exact path='/support' component={Support} />
+        <Route exact path='/shop'>
+          <Shop products={[{ image: '3', name: '4', price: 3, id: 'f' }]} />
+        </Route>
+        <Route exact path='/shopping-cart'>
+          <ShoppingCart cartItems={[]} />
+        </Route>
+      </Switch>
+      <Footer />
+    </Router>
+  )
 }
 
-export default App;
+export default App
