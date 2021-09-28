@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { HashRouter as Router, Switch, Route } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import uniqid from 'uniqid'
 import { getRandomArray } from './utils.js'
