@@ -1,0 +1,13 @@
+section h3 {
+  color: var(--blue-color);
+}
+
+.push-link {
+  color: var(--blue-color);
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+.push-link:hover {
+  color: var(--success-color);
+}
