@@ -1,0 +1,25 @@
+.cart-notifier,
+.cart-notifier div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: var(--blue-color);
+  padding: 0.3rem 0;
+  position: sticky;
+  top: 0;
+}
+
+.cart-notifier * {
+  margin-right: 0.5rem;
+  color: white;
+}
+
+.close-notification {
+  cursor: pointer;
+}
+
+.close-notification:hover * {
+  color: var(--danger-color) !important;
+}
