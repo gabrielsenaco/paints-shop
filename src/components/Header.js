@@ -5,13 +5,13 @@ import '../styles/Header.css'
 
 const Header = ({ cartLength }) => {
   return (
-    <header>
-      <Link to='/' className='logo'>
+    <header className='header'>
+      <Link to='/'>
         <Logo />
       </Link>
       <nav className='header-navbar'>
         <li>
-          <NavLink to='/' activeClassName='selected'>
+          <NavLink exact to='/' activeClassName='selected'>
             Home
           </NavLink>
         </li>
@@ -27,10 +27,14 @@ const Header = ({ cartLength }) => {
         </li>
       </nav>
       <div className='header-cart-container'>
-        <small>{cartLength || 0}</small>
-        <NavLink to='/shopping-cart' activeClassName='selected'>
+        <NavLink
+          to='/shopping-cart'
+          activeClassName='cart selected'
+          className='cart'
+        >
           <IconShoppingCart />
         </NavLink>
+        <small>{cartLength || 0}</small>
       </div>
     </header>
   )
