@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom'
 import ProductDetailed from './../components/ProductDetailed'
+import { useScrollTop } from './../utils'
+import './../styles/ProductDetails.css'
 
 const ProductDetails = ({
   image,
