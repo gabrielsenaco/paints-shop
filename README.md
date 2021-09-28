@@ -29,4 +29,4 @@ The main goal is to make a Shopping Cart system using React with React Router.
 
 Expect that the user will be able to add items to the cart;
 Expect to receive visual feedback when add a product to cart;
-[And some expectations.](https://www.theodinproject.com/paths/full-stack-javascript/courses/javascript/lessons/shopping-cart)
+[And some others expectations.](https://www.theodinproject.com/paths/full-stack-javascript/courses/javascript/lessons/shopping-cart)
