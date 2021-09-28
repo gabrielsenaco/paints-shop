@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@400;800&display=swap');
+
+:root {
+  --font: 'Epilogue', sans-serif;
+  --primary-font-weight: 800;
+  --secondary-font-weight: 400;
+
+  --dark-purple-blue-color: #1f3a89;
+  --blue-color: #6495ed;
+  --white-color: #ffffff;
+  --black-color: #333333;
+  --danger-color: #ff6c47;
+  --success-color: #3ad144;
+
+  --card-shadow-03dp: 0px 3px 4px rgba(0, 0, 0, 0.14),
+    0px 3px 3px rgba(0, 0, 0, 0.12), 0px 1px 8px rgba(0, 0, 0, 0.2);
+  --card-shadow-04dp: 0px 4px 5px rgba(0, 0, 0, 0.14),
+    0px 1px 10px rgba(0, 0, 0, 0.12), 0px 2px 4px rgba(0, 0, 0, 0.2);
+  --card-shadow-08dp: 0px 8px 10px rgba(0, 0, 0, 0.14),
+    0px 3px 14px rgba(0, 0, 0, 0.12), 0px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+html {
+  font-size: 100%;
+}
+
+* {
+  font-family: var(--font) !important;
+  font-weight: var(--secondary-font-weight);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: var(--primary-font-weight);
+  line-height: 1.3;
+}
+
+h1 {
+  font-size: 3.052rem;
+}
+
+h2 {
+  font-size: 2.441rem;
+}
+
+h3 {
+  font-size: 1.953rem;
+}
+
+h4 {
+  font-size: 1.563rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+small {
+  font-size: 0.8rem;
+}
