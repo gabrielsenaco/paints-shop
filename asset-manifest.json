@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/paints-shop/static/css/main.b3d1d3a7.chunk.css",
-    "main.js": "/paints-shop/static/js/main.0b442b9c.chunk.js",
-    "main.js.map": "/paints-shop/static/js/main.0b442b9c.chunk.js.map",
+    "main.js": "/paints-shop/static/js/main.c30ae5e1.chunk.js",
+    "main.js.map": "/paints-shop/static/js/main.c30ae5e1.chunk.js.map",
     "runtime-main.js": "/paints-shop/static/js/runtime-main.3ad22580.js",
     "runtime-main.js.map": "/paints-shop/static/js/runtime-main.3ad22580.js.map",
     "static/css/2.0978f8b3.chunk.css": "/paints-shop/static/css/2.0978f8b3.chunk.css",
@@ -20,6 +20,6 @@
     "static/css/2.0978f8b3.chunk.css",
     "static/js/2.65ada76d.chunk.js",
     "static/css/main.b3d1d3a7.chunk.css",
-    "static/js/main.0b442b9c.chunk.js"
+    "static/js/main.c30ae5e1.chunk.js"
   ]
 }
