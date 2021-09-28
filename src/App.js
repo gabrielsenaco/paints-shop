@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { useState } from 'react'
+import uniqid from 'uniqid'
 import Paints from './paints/paints.json'
 import { getRandomArray } from './utils.js'
 import Header from './components/Header'
@@ -16,7 +17,7 @@ function generateProducts () {
   return Paints.map(paint => {
     return {
       ...paint,
-      id: paint.name.replaceAll(' ', '-')
+      id: paint.name.replaceAll(' ', '-').concat('-', uniqid())
     }
   })
 }
