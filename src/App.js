@@ -13,10 +13,10 @@ import Support from './pages/Support'
 import ShoppingCart from './pages/ShoppingCart'
 import { fetchProducts } from './api/query_products'
 
-const PRODUCTS_URL = 'https://res.cloudinary.com/gabes/raw/upload/v1632837746/paints_t2fg3h.json'
+const PRODUCTS_URL =
+  'https://res.cloudinary.com/gabes/raw/upload/v1632837746/paints_t2fg3h.json'
 
 const createProducts = async () => {
-
   const products = await fetchProducts(PRODUCTS_URL)
 
   return products.map(product => {
@@ -27,7 +27,10 @@ const createProducts = async () => {
     */
     return {
       ...product,
-      id: product.name.replaceAll(' ', '-').concat('-', uniqid()).toLowerCase()
+      id: product.name
+        .replaceAll(' ', '-')
+        .concat('-', uniqid())
+        .toLowerCase()
     }
   })
 }
@@ -36,7 +39,7 @@ const App = () => {
   const [products, setProducts] = useState([])
 
   useEffect(() => {
-    createProducts().then((data) => setProducts(getRandomArray(data)))
+    createProducts().then(data => setProducts(getRandomArray(data)))
   }, [])
 
   const [cart, setCart] = useState([])

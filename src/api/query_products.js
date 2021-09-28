@@ -1,4 +1,4 @@
-export const fetchProducts = async (url) => {
+export const fetchProducts = async url => {
   const response = await fetch(url, {
     method: 'GET'
   })
@@ -7,4 +7,6 @@ export const fetchProducts = async (url) => {
   return json
 }
 
-fetchProducts('https://res.cloudinary.com/gabes/raw/upload/v1632837746/paints_t2fg3h.json')
+fetchProducts(
+  'https://res.cloudinary.com/gabes/raw/upload/v1632837746/paints_t2fg3h.json'
+)
