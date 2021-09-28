@@ -27,7 +27,7 @@ const createProducts = async () => {
     */
     return {
       ...product,
-      id: product.name.replaceAll(' ', '-').concat('-', uniqid())
+      id: product.name.replaceAll(' ', '-').concat('-', uniqid()).toLowerCase()
     }
   })
 }
