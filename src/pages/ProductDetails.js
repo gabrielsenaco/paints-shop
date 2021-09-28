@@ -11,6 +11,8 @@ const ProductDetails = ({
   appendProductQuantity,
   productAddedNotifier
 }) => {
+  useScrollTop()
+
   return (
     <section className='product-details-section'>
       <Link to='/shop' className='push-link'>
@@ -18,6 +20,7 @@ const ProductDetails = ({
       </Link>
       <ProductDetailed
         image={image}
+        name={name}
         price={price}
         id={id}
         appendProductQuantity={appendProductQuantity}
