@@ -1,4 +1,6 @@
 import { IconTrash } from '@tabler/icons'
+import './../styles/CartItem.css'
+import { Link } from 'react-router-dom'
 
 const CartItem = ({
   image,
@@ -23,10 +25,12 @@ const CartItem = ({
   }
 
   return (
-    <div>
-      <img className='cart-product-image' src={image} alt={name} />
+    <div className='cart-item'>
+      <Link to={`/shop/product/${id}`}>
+        <img className='cart-product-image' src={image} alt={name} />
+      </Link>
       <p className='cart-product-name'>{name}</p>
-      <p className='cart-product-price'>{price * quantity}</p>
+      <p className='cart-product-price'>$ {price * quantity}</p>
       <p className='cart-product-quantity'>{quantity}</p>
       <div className='cart-item-actions'>
         <small onClick={appendProductHandler} className='cart-item-action'>
