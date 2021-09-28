@@ -1,0 +1,20 @@
+.home-section {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.banner {
+  margin: 1rem auto;
+}
+
+.banner img {
+  max-width: 100%;
+  height: auto;
+}
+
+.home-section > h3,
+.home-section .push-link {
+  margin-left: 2rem;
+  margin-bottom: 1rem;
+}
