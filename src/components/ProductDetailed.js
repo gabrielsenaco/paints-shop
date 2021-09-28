@@ -12,7 +12,7 @@ const ProductDetailed = ({
   appendProductQuantity,
   productAddedNotifier
 }) => {
-  const [quantity, setQuantity] = useState(0)
+  const [quantity, setQuantity] = useState(1)
   const history = useHistory()
 
   const handleCartSubmit = event => {
@@ -22,7 +22,11 @@ const ProductDetailed = ({
     history.push('/shop')
   }
 
-  const updateQuantity = event => setQuantity(parseInt(event.target.value || 0))
+  const updateQuantity = event => {
+    const value = parseInt(event.target.value || 0)
+    if (value < 1) return
+    return setQuantity(value)
+  }
 
   return (
     <form className='product-detailed' onSubmit={handleCartSubmit}>
