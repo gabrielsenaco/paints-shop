@@ -1,25 +1,25 @@
 {
   "files": {
     "main.css": "/paints-shop/static/css/main.b3d1d3a7.chunk.css",
-    "main.js": "/paints-shop/static/js/main.4d77a29e.chunk.js",
-    "main.js.map": "/paints-shop/static/js/main.4d77a29e.chunk.js.map",
+    "main.js": "/paints-shop/static/js/main.0b442b9c.chunk.js",
+    "main.js.map": "/paints-shop/static/js/main.0b442b9c.chunk.js.map",
     "runtime-main.js": "/paints-shop/static/js/runtime-main.3ad22580.js",
     "runtime-main.js.map": "/paints-shop/static/js/runtime-main.3ad22580.js.map",
     "static/css/2.0978f8b3.chunk.css": "/paints-shop/static/css/2.0978f8b3.chunk.css",
-    "static/js/2.b61ff0b4.chunk.js": "/paints-shop/static/js/2.b61ff0b4.chunk.js",
-    "static/js/2.b61ff0b4.chunk.js.map": "/paints-shop/static/js/2.b61ff0b4.chunk.js.map",
+    "static/js/2.65ada76d.chunk.js": "/paints-shop/static/js/2.65ada76d.chunk.js",
+    "static/js/2.65ada76d.chunk.js.map": "/paints-shop/static/js/2.65ada76d.chunk.js.map",
     "index.html": "/paints-shop/index.html",
     "static/css/2.0978f8b3.chunk.css.map": "/paints-shop/static/css/2.0978f8b3.chunk.css.map",
     "static/css/main.b3d1d3a7.chunk.css.map": "/paints-shop/static/css/main.b3d1d3a7.chunk.css.map",
-    "static/js/2.b61ff0b4.chunk.js.LICENSE.txt": "/paints-shop/static/js/2.b61ff0b4.chunk.js.LICENSE.txt",
+    "static/js/2.65ada76d.chunk.js.LICENSE.txt": "/paints-shop/static/js/2.65ada76d.chunk.js.LICENSE.txt",
     "static/media/banner.9414f333.png": "/paints-shop/static/media/banner.9414f333.png",
     "static/media/logo.594e6b29.svg": "/paints-shop/static/media/logo.594e6b29.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.3ad22580.js",
     "static/css/2.0978f8b3.chunk.css",
-    "static/js/2.b61ff0b4.chunk.js",
+    "static/js/2.65ada76d.chunk.js",
     "static/css/main.b3d1d3a7.chunk.css",
-    "static/js/main.4d77a29e.chunk.js"
+    "static/js/main.0b442b9c.chunk.js"
   ]
 }
