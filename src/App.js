@@ -1,8 +1,7 @@
 import { useParams } from 'react-router-dom'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import uniqid from 'uniqid'
-import Paints from './paints/paints.json'
 import { getRandomArray } from './utils.js'
 import Header from './components/Header'
 import Footer from './components/Footer'
@@ -12,18 +11,34 @@ import Shop from './pages/Shop'
 import ProductDetails from './pages/ProductDetails'
 import Support from './pages/Support'
 import ShoppingCart from './pages/ShoppingCart'
+import { fetchProducts } from './api/query_products'
 
-function generateProducts () {
-  return Paints.map(paint => {
+const PRODUCTS_URL = 'https://res.cloudinary.com/gabes/raw/upload/v1632837746/paints_t2fg3h.json'
+
+const createProducts = async () => {
+
+  const products = await fetchProducts(PRODUCTS_URL)
+
+  return products.map(product => {
+    /* TO-DO: We can later remove this id setup. We can configure to expect each product to have its own unique id.
+      Why? 
+        1. In a real e-commerce application, the user usually saves the product link in the browser's favorites to purchase it later. If the real application sets the product id on the front-end, the saved link will be lost.
+        2. The application may be slow if there are too many products to iterate.
+    */
     return {
-      ...paint,
-      id: paint.name.replaceAll(' ', '-').concat('-', uniqid())
+      ...product,
+      id: product.name.replaceAll(' ', '-').concat('-', uniqid())
     }
   })
 }
 
 const App = () => {
-  const [products] = useState(getRandomArray(generateProducts()))
+  const [products, setProducts] = useState([])
+
+  useEffect(() => {
+    createProducts().then((data) => setProducts(getRandomArray(data)))
+  }, [])
+
   const [cart, setCart] = useState([])
   const [lastProduct, setLastProduct] = useState(null)
 
