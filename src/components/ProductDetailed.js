@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import Product from './Product'
 import Button from './Button'
+import './../styles/ProductDetailed.css'
 
 const ProductDetailed = ({
   image,
@@ -38,9 +39,10 @@ const ProductDetailed = ({
           type='number'
           name='quantity'
           value={quantity}
+          className='product-cart-quantity'
         />
       </label>
-      <Button type='submit'>
+      <Button type='submit' className='product-add-to-cart'>
         <IconShoppingCartPlus />
         Add to cart
       </Button>
