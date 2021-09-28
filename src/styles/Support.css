@@ -1,0 +1,8 @@
+.support-section {
+  margin: 1rem 0 1rem 1rem;
+}
+
+.support-section p {
+  color: var(--black-color);
+  line-height: 1.2;
+}
