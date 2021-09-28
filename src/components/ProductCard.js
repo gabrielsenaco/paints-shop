@@ -1,5 +1,6 @@
 import Product from './Product'
 import { IconShoppingCartPlus } from '@tabler/icons'
+import './../styles/ProductCard.css'
 
 const ProductCard = ({
   image,
@@ -16,8 +17,12 @@ const ProductCard = ({
 
   return (
     <div className='product-card'>
-      <Product image={image} name={name} price={price} id={id} />
-      <IconShoppingCartPlus onClick={handleCartClick} />
+      <Product image={image} name={name} price={price} id={id}>
+        <IconShoppingCartPlus
+          onClick={handleCartClick}
+          className='product-cart-inline'
+        />
+      </Product>
     </div>
   )
 }

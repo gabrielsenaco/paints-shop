@@ -1,0 +1,34 @@
+.product-card img {
+  width: 100%;
+  height: auto;
+}
+
+.product-card {
+  margin: 1rem;
+  background-color: var(--dark-purple-blue-color);
+  box-shadow: var(--card-shadow-03dp);
+}
+
+.product-card:hover {
+  box-shadow: var(--card-shadow-08dp);
+}
+
+.product-card * {
+  color: var(--white-color);
+}
+
+.product-infos {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  padding: 0.5rem 0.5rem;
+}
+
+.product-cart-inline,
+.product-card img {
+  cursor: pointer;
+}
+
+.product-cart-inline:hover > * {
+  color: var(--success-color);
+}
