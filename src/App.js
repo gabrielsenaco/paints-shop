@@ -121,7 +121,7 @@ const App = () => {
           />
         </Route>
         <Route path='/shop/product/:productId'>
-          <ProductWrapper
+          <ProductDetailsWrapper
             products={products}
             appendProductQuantity={appendProductQuantity}
             productAddedNotifier={productAddedNotifier}
@@ -142,7 +142,7 @@ const App = () => {
   )
 }
 
-const ProductWrapper = ({
+const ProductDetailsWrapper = ({
   products,
   appendProductQuantity,
   productAddedNotifier
